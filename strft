@@ -1,0 +1,229 @@
+Help on module time:
+
+NNAAMMEE
+    time - This module provides various functions to manipulate time values.
+
+FFIILLEE
+    /usr/lib/python2.6/lib-dynload/timemodule.so
+
+MMOODDUULLEE  DDOOCCSS
+    http://docs.python.org/library/time
+
+DDEESSCCRRIIPPTTIIOONN
+    There are two standard representations of time.  One is the number
+    of seconds since the Epoch, in UTC (a.k.a. GMT).  It may be an integer
+    or a floating point number (to represent fractions of seconds).
+    The Epoch is system-defined; on Unix, it is generally January 1st, 1970.
+    The actual value can be retrieved by calling gmtime(0).
+    
+    The other representation is a tuple of 9 integers giving local time.
+    The tuple items are:
+      year (four digits, e.g. 1998)
+      month (1-12)
+      day (1-31)
+      hours (0-23)
+      minutes (0-59)
+      seconds (0-59)
+      weekday (0-6, Monday is 0)
+      Julian day (day in the year, 1-366)
+      DST (Daylight Savings Time) flag (-1, 0 or 1)
+    If the DST flag is 0, the time is given in the regular time zone;
+    if it is 1, the time is given in the DST time zone;
+    if it is -1, mktime() should guess based on the date and time.
+    
+    Variables:
+    
+    timezone -- difference in seconds between UTC and local standard time
+    altzone -- difference in  seconds between UTC and local DST time
+    daylight -- whether local time should reflect DST
+    tzname -- tuple of (standard time zone name, DST time zone name)
+    
+    Functions:
+    
+    time() -- return current time in seconds since the Epoch as a float
+    clock() -- return CPU time since process start as a float
+    sleep() -- delay for a number of seconds given as a float
+    gmtime() -- convert seconds since Epoch to UTC tuple
+    localtime() -- convert seconds since Epoch to local time tuple
+    asctime() -- convert time tuple to string
+    ctime() -- convert time in seconds to string
+    mktime() -- convert local time tuple to seconds since Epoch
+    strftime() -- convert time tuple to string according to format specification
+    strptime() -- parse string to time tuple according to format specification
+    tzset() -- change the local timezone
+
+CCLLAASSSSEESS
+    __builtin__.object
+        struct_time
+    
+    class ssttrruucctt__ttiimmee(__builtin__.object)
+     |  Methods defined here:
+     |  
+     |  ____aadddd____(...)
+     |      x.__add__(y) <==> x+y
+     |  
+     |  ____ccoonnttaaiinnss____(...)
+     |      x.__contains__(y) <==> y in x
+     |  
+     |  ____eeqq____(...)
+     |      x.__eq__(y) <==> x==y
+     |  
+     |  ____ggee____(...)
+     |      x.__ge__(y) <==> x>=y
+     |  
+     |  ____ggeettiitteemm____(...)
+     |      x.__getitem__(y) <==> x[y]
+     |  
+     |  ____ggeettsslliiccee____(...)
+     |      x.__getslice__(i, j) <==> x[i:j]
+     |      
+     |      Use of negative indices is not supported.
+     |  
+     |  ____ggtt____(...)
+     |      x.__gt__(y) <==> x>y
+     |  
+     |  ____hhaasshh____(...)
+     |      x.__hash__() <==> hash(x)
+     |  
+     |  ____llee____(...)
+     |      x.__le__(y) <==> x<=y
+     |  
+     |  ____lleenn____(...)
+     |      x.__len__() <==> len(x)
+     |  
+     |  ____lltt____(...)
+     |      x.__lt__(y) <==> x<y
+     |  
+     |  ____mmuull____(...)
+     |      x.__mul__(n) <==> x*n
+     |  
+     |  ____nnee____(...)
+     |      x.__ne__(y) <==> x!=y
+     |  
+     |  ____rreedduuccee____(...)
+     |  
+     |  ____rreepprr____(...)
+     |      x.__repr__() <==> repr(x)
+     |  
+     |  ____rrmmuull____(...)
+     |      x.__rmul__(n) <==> n*x
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |  
+     |  ttmm__hhoouurr
+     |  
+     |  ttmm__iissddsstt
+     |  
+     |  ttmm__mmddaayy
+     |  
+     |  ttmm__mmiinn
+     |  
+     |  ttmm__mmoonn
+     |  
+     |  ttmm__sseecc
+     |  
+     |  ttmm__wwddaayy
+     |  
+     |  ttmm__yyddaayy
+     |  
+     |  ttmm__yyeeaarr
+     |  
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  ____nneeww____ = <built-in method __new__ of type object>
+     |      T.__new__(S, ...) -> a new object with type S, a subtype of T
+     |  
+     |  nn__ffiieellddss = 9
+     |  
+     |  nn__sseeqquueennccee__ffiieellddss = 9
+     |  
+     |  nn__uunnnnaammeedd__ffiieellddss = 0
+
+FFUUNNCCTTIIOONNSS
+    aassccttiimmee(...)
+        asctime([tuple]) -> string
+        
+        Convert a time tuple to a string, e.g. 'Sat Jun 06 16:26:11 1998'.
+        When the time tuple is not present, current time as returned by localtime()
+        is used.
+    
+    cclloocckk(...)
+        clock() -> floating point number
+        
+        Return the CPU time or real time since the start of the process or since
+        the first call to clock().  This has as much precision as the system
+        records.
+    
+    ccttiimmee(...)
+        ctime(seconds) -> string
+        
+        Convert a time in seconds since the Epoch to a string in local time.
+        This is equivalent to asctime(localtime(seconds)). When the time tuple is
+        not present, current time as returned by localtime() is used.
+    
+    ggmmttiimmee(...)
+        gmtime([seconds]) -> (tm_year, tm_mon, tm_mday, tm_hour, tm_min,
+                               tm_sec, tm_wday, tm_yday, tm_isdst)
+        
+        Convert seconds since the Epoch to a time tuple expressing UTC (a.k.a.
+        GMT).  When 'seconds' is not passed in, convert the current time instead.
+    
+    llooccaallttiimmee(...)
+        localtime([seconds]) -> (tm_year,tm_mon,tm_mday,tm_hour,tm_min,
+                                  tm_sec,tm_wday,tm_yday,tm_isdst)
+        
+        Convert seconds since the Epoch to a time tuple expressing local time.
+        When 'seconds' is not passed in, convert the current time instead.
+    
+    mmkkttiimmee(...)
+        mktime(tuple) -> floating point number
+        
+        Convert a time tuple in local time to seconds since the Epoch.
+    
+    sslleeeepp(...)
+        sleep(seconds)
+        
+        Delay execution for a given number of seconds.  The argument may be
+        a floating point number for subsecond precision.
+    
+    ssttrrffttiimmee(...)
+        strftime(format[, tuple]) -> string
+        
+        Convert a time tuple to a string according to a format specification.
+        See the library reference manual for formatting codes. When the time tuple
+        is not present, current time as returned by localtime() is used.
+    
+    ssttrrppttiimmee(...)
+        strptime(string, format) -> struct_time
+        
+        Parse a string to a time tuple according to a format specification.
+        See the library reference manual for formatting codes (same as strftime()).
+    
+    ttiimmee(...)
+        time() -> floating point number
+        
+        Return the current time in seconds since the Epoch.
+        Fractions of a second may be present if the system clock provides them.
+    
+    ttzzsseett(...)
+        tzset(zone)
+        
+        Initialize, or reinitialize, the local timezone to the value stored in
+        os.environ['TZ']. The TZ environment variable should be specified in
+        standard Unix timezone format as documented in the tzset man page
+        (eg. 'US/Eastern', 'Europe/Amsterdam'). Unknown timezones will silently
+        fall back to UTC. If the TZ environment variable is not set, the local
+        timezone is set to the systems best guess of wallclock time.
+        Changing the TZ environment variable without calling tzset *may* change
+        the local timezone used by methods such as localtime, but this behaviour
+        should not be relied on.
+
+DDAATTAA
+    aacccceepptt22ddyyeeaarr = 1
+    aallttzzoonnee = -28800
+    ddaayylliigghhtt = 0
+    ttiimmeezzoonnee = -28800
+    ttzznnaammee = ('CST', 'CST')
+

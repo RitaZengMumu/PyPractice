@@ -1,0 +1,5 @@
+zhangsan	a1003@qq.com	it	manager	13511110333
+zhanglili	lili@126.com	sales	assistant	15501777356
+lijing	lijing@163.com	360	marketing	15501144535
+liusan	liusan@qq.com	qq	developer	13514564456
+lili	lily@126.com	sina	invest	1563567777

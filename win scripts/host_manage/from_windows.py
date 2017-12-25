@@ -1,0 +1,1 @@
+print "hello,this file is from windows"

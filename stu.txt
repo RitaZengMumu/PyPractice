@@ -1,0 +1,4 @@
+st001	zhangsan	a1003@qq.com	it	manager	13511110333
+st002	zhanglili	lili@126.com	sales	assistant	15501777356
+st003	lijing	lijing@163.com	360	marketing	15501144535
+st004	liusan	liusan@qq.com	qq	develop	developer
