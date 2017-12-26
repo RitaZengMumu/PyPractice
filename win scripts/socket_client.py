@@ -9,7 +9,7 @@ if sys.getdefaultencoding() != default_encoding:
 
 client = socket.socket()
 client.connect(('localhost',6969))
-client.send("我要下a片".encode(encoding="utf-8"))
+client.send("我要下电影".encode(encoding="utf-8"))
 data = client.recv(1024)
 print("recv:",unicode(data,'utf-8'))
 client.close()
